@@ -8,4 +8,6 @@ RUN apk add nginx curl
 
 RUN mkdir -p /etc/pki/nginx/{certs,private}
 
+ADD alpine-nginx.tar.gz /
+
 ENTRYPOINT ["/usr/local/bin/start"]
