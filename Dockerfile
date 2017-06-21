@@ -10,4 +10,6 @@ RUN mkdir -p /etc/pki/nginx/{certs,private}
 
 ADD alpine-nginx.tar.gz /
 
+EXPOSE 80
+
 ENTRYPOINT ["/usr/local/bin/start"]
