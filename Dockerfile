@@ -11,6 +11,14 @@ RUN mkdir -p /etc/pki/nginx/{certs,private}
 # ADD alpine-nginx.tar.gz /
 ADD alpine-nginx/ /
 
-EXPOSE 80
+# give nginx user access to some dirs
+RUN adduser -D -u 1000 -g 'www' www
+RUN mkdir /www
+RUN chown -R www:www /www /var/lib/nginx /var/log/nginx /var/tmp/nginx
+
+# give nginx binary access to 
+USER www
+
+EXPOSE 8080
 
 ENTRYPOINT ["/usr/local/bin/start"]
