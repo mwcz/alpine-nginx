@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
-nginx
+# nginx
+watch date
