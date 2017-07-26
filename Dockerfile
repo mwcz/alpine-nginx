@@ -8,7 +8,8 @@ RUN apk add nginx curl
 
 RUN mkdir -p /etc/pki/nginx/{certs,private}
 
-ADD alpine-nginx.tar.gz /
+# ADD alpine-nginx.tar.gz /
+ADD alpine-nginx/ /
 
 EXPOSE 80
 
