@@ -14,7 +14,7 @@ ADD alpine-nginx/ /
 # give nginx user access to some dirs
 RUN adduser -D -u 1000 -g 'www' www
 RUN mkdir /www
-RUN chown -R www:www /www /var/lib/nginx /var/log/nginx /var/tmp/nginx
+RUN chmod -R 777 /www /var/lib/nginx /var/log/nginx /var/tmp/nginx
 
 # give nginx binary access to 
 USER www
